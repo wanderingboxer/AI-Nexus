@@ -1,0 +1,6 @@
+schema
+  @sdl(
+    files: ["exchange/index.graphql", "tools.graphql", "math/index.graphql"]
+  ) {
+  query: Query
+}
