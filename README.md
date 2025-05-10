@@ -32,6 +32,8 @@ A sophisticated AI chat application built with Next.js, featuring real-time conv
   - Support for YouTube transcripts
   - Google Books API integration
   - Custom data source tooling
+  - Currency Exchanger
+  - Performs Math operations
 
 ### LangChain & LangGraph Features
 
