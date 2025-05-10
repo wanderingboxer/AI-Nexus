@@ -7,12 +7,12 @@ import { auth } from "@clerk/nextjs/server";
 
 interface ChatPageProps {
   params: {
-    chatId: Id<"chats">;
+    chatId: string;
   };
 }
 
 export default async function ChatPage({ params }: ChatPageProps) {
-  const { chatId } = await params;
+  const chatId = await params.chatId as Id<"chats">;
 
   // Get user authentication
   const { userId } = await auth();
