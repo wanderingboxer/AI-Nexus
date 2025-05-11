@@ -13,7 +13,7 @@ interface PageProps {
 }
 
 export default async function ChatPage({ params, searchParams }: PageProps) {
-  const [resolvedParams, resolvedSearchParams] = await Promise.all([params, searchParams]);
+  const [resolvedParams] = await Promise.all([params, searchParams]);
   const chatId = resolvedParams.chatId as Id<"chats">;
 
   // Get user authentication
