@@ -9,11 +9,11 @@ interface PageProps {
   params: Promise<{
     chatId: string;
   }>;
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export default async function ChatPage({ params }: PageProps) {
-  const resolvedParams = await params;
+export default async function ChatPage({ params, searchParams }: PageProps) {
+  const [resolvedParams, resolvedSearchParams] = await Promise.all([params, searchParams]);
   const chatId = resolvedParams.chatId as Id<"chats">;
 
   // Get user authentication
